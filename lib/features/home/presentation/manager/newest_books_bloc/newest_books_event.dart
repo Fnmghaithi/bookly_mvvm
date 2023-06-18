@@ -1,4 +1,4 @@
-part of 'newest_books_bloc_bloc.dart';
+part of 'newest_books_bloc.dart';
 
 abstract class NewestBooksBlocEvent extends Equatable {
   const NewestBooksBlocEvent();

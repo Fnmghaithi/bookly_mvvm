@@ -3,14 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:bookly_mvvm/features/home/data/models/book_model/book_model.dart';
 
-part 'newest_books_bloc_event.dart';
-part 'newest_books_bloc_state.dart';
+part 'newest_books_event.dart';
+part 'newest_books_state.dart';
 
-class NewestBooksBlocBloc
-    extends Bloc<NewestBooksBlocEvent, NewestBooksBlocState> {
+class NewestBooksBloc extends Bloc<NewestBooksBlocEvent, NewestBooksBlocState> {
   final HomeRepo homeRepo;
-  NewestBooksBlocBloc({required this.homeRepo})
-      : super(NewestBooksBlocInitial()) {
+  NewestBooksBloc({required this.homeRepo}) : super(NewestBooksBlocInitial()) {
     on<NewestBooksBlocEvent>((event, emit) async {
       if (event is FetchNewestBooksEvent) {
         emit(NewestBooksBlocLoading());
