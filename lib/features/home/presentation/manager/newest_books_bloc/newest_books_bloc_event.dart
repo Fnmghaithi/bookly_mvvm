@@ -6,3 +6,5 @@ abstract class NewestBooksBlocEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class FetchNewestBooksEvent extends NewestBooksBlocEvent {}
