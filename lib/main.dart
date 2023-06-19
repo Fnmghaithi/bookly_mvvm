@@ -1,5 +1,4 @@
 import 'package:bookly_mvvm/constants.dart';
-import 'package:bookly_mvvm/core/utils/api_service.dart';
 import 'package:bookly_mvvm/core/utils/app_router.dart';
 import 'package:bookly_mvvm/core/utils/service_locator.dart';
 import 'package:bookly_mvvm/features/home/data/repos/home_repo_impl.dart';
@@ -25,7 +24,7 @@ class BooklyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => FeaturedBooksBloc(
             homeRepo: getIt.get<HomeRepoImpl>(),
-          ),
+          )..add(FetchFeaturedBooksEvent()),
         ),
         BlocProvider(
           create: (context) => NewestBooksBloc(
