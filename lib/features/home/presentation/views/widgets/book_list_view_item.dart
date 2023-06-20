@@ -1,6 +1,5 @@
 import 'package:bookly_mvvm/constants.dart';
 import 'package:bookly_mvvm/core/utils/app_router.dart';
-import 'package:bookly_mvvm/core/utils/assets.dart';
 import 'package:bookly_mvvm/core/utils/styles.dart';
 import 'package:bookly_mvvm/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_mvvm/features/home/presentation/views/widgets/book_rating.dart';
@@ -26,7 +25,7 @@ class BookListViewItem extends StatelessWidget {
         child: Row(
           children: [
             CustomBookImage(
-              imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,
+              imageUrl: book.volumeInfo!.imageLinks?.thumbnail! ?? '',
             ),
             const SizedBox(width: 30),
             Expanded(
